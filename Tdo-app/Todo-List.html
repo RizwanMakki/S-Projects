@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #8360c3, #2ebf91);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 50px;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 18px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .search-input {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .search-input input {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+
+    .search-input ion-icon {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      color: #888;
+      font-size: 20px;
+    }
+
+    .todo-input {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+      background: #f8f8f8;
+      padding: 10px 12px;
+      border-radius: 12px;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .todo-input input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      background-color: #fff;
+      font-size: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .todo-input button {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 18px;
+      background: linear-gradient(to right, #7f00ff, #e100ff);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .todo-input button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #6a00cc, #cc00cc);
+    }
+
+    .clear-btn {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 12px;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .clear-btn:hover {
+      background: linear-gradient(to right, #e6004c, #ff3c1f);
+      transform: scale(1.03);
+    }
+
+    ul#TodoList {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul#TodoList li {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #444;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    ul#TodoList li:hover {
+      background-color: #e9e9e9;
+      transform: scale(1.01);
+    }
+
+    ul#TodoList li.removed {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.4s ease;
+}
+
+ 
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>📝 My Todo List</h1>
+
+    <div class="search-input">
+      <input type="text" id="SearchInput" placeholder="Search tasks..." />
+      <ion-icon name="search-outline"></ion-icon>
+    </div>
+
+    <div class="todo-input">
+      <input type="text" id="TodoInput" placeholder="Add a new task..." />
+      <button id="SubmitBtn">
+        <ion-icon name="add-outline"></ion-icon> Add
+      </button>
+    </div>
+
+    <ul id="TodoList"></ul>
+
+    <button class="clear-btn" id="ClearBtn">🧹 Clear All</button>
+    <script src="Todo-List.js"></script>
+  </div>

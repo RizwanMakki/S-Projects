@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h3 id="timer"></h3> <!-- Timer will be shown here -->
+
+        <h2 id="question">Question will appear here</h2>
+        <form id="options">
+            <label><input type="radio" name="option" value="0"> Option 1</label>
+            <label><input type="radio" name="option" value="1"> Option 2</label>
+            <label><input type="radio" name="option" value="2"> Option 3</label>
+            <label><input type="radio" name="option" value="3"> Option 4</label>
+        </form>
+        <button disabled id="nextBtn">Next Question</button>
+    </div>
+
+    <script src="Quiz.js"></script>
+
+</body>
+
+</html>
